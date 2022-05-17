@@ -1,0 +1,7 @@
+Group:Number:SUM gPower   "Total Power [%.2f Watt]"         
+
+Number MyPower1     "My Power1 [%.2f W]"               (gPower) 
+Number MyPower2     "My Power2 [%.2f W]"               (gPower)
+
+DateTime MyLastSeen1  "My Last Seen1 [%1$tY.%1$tm.%1$td %1$tH:%1$tM]" 
+DateTime MyLastSeen2  "My Last Seen2 [%1$tY.%1$tm.%1$td %1$tH:%1$tM]" 
