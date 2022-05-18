@@ -6,14 +6,14 @@ Requirements
 - Java 11
 - Maven 3.x+
 
-# Step by step install
+## Step by step install
 1. Clone repo git clone https://github.com/seaside1/jrule-user/
 2. Run maven to build: maven clean install
 3. Import project or build in your preferred IDEA (Intellij, Eclipse etc)
 4. Start developing and adding rules to your org.openhab.automation.jrule.rules.user package
 5. Build with mvn install and deploy it in OpenHAB by placing the created jar-file (jrule-user-1.0-SNAPSHOT.jar) under:  /etc/automation/jrule/rules-jar/
 
-# Dependencies 
+## Dependencies 
 The project is depending on some jars:
 
 1. jrule-items.jar (This file is containing some sample items see https://github.com/seaside1/jrule-user/blob/main/items/jrule-user.items
@@ -22,7 +22,7 @@ The project is depending on some jars:
 4. Mockito (For mocking rules)
 5. Variouse OpenHAB core dependencies
 
-# Testing
+## Testing
 In order to test Java Rules using JUnit and mockito the OpenHAB Eventbus has 
 a mock implementation https://github.com/seaside1/jrule/tree/main/src/main/java/org/openhab/automation/jrule/internal/test
 This implementation is really simple and only supports ItemStateChangedEvents for now. Feel free to expand it
