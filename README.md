@@ -57,6 +57,7 @@ We add a rule: https://github.com/seaside1/jrule-user/blob/main/src/main/java/or
 ```
  
  In Order to test the rule, and see that myFirstRule is trigged two time we can add the following test:
+ See: https://github.com/seaside1/jrule-user/blob/main/src/test/java/org/openhab/automation/jrule/rules/user/TestMyRules.java
  
 ```java
      @Test
