@@ -29,7 +29,6 @@ and anything needed in order to test Java Rules. If possible submit a PR with ch
 Using the MockEventBus you can add a textfile with actual OpenHAB Events. You typically find these events looking at
 /var/log/openhab/events.log
 
-
 ``
 2022-03-15 15:30:26.575 [INFO ] [openhab.event.ItemStateChangedEvent ] - Item 'MyLastSeen1' changed from 2022-03-15T15:28:36.902+0100 to 2022-03-15T15:29:36.891+0100
 2022-03-15 15:30:31.375 [INFO ] [openhab.event.ConfigStatusInfoEvent ] - ConfigStatusInfo [configStatusMessages=[]]
@@ -47,17 +46,17 @@ Using the MockEventBus you can add a textfile with actual OpenHAB Events. You ty
 
 We add a rule: https://github.com/seaside1/jrule-user/blob/main/src/main/java/org/openhab/automation/jrule/rules/user/MyFirstRules.java
 
-`` java
+``java
     @JRuleName("testRuleZwave")
     @JRuleWhen(item = _MyPower1.ITEM, trigger = _MyPower1.TRIGGER_CHANGED)
     public synchronized void myFirstRule(JRuleEvent event) {
         logInfo("MyPower1 Changed! from: {} to: {}", event.getOldState(), event.getState());
     }
- ``
+``
  
  In Order to test the rule, and see that myFirstRule is trigged two time we can add the following test:
  
- `` java
+``java
   @Test
     public void testMyRule() {
         JRuleEngine engine = JRuleEngine.get();
@@ -68,7 +67,7 @@ We add a rule: https://github.com/seaside1/jrule-user/blob/main/src/main/java/or
         eventBus.start();
         verify(myFirstRules, times(2)).myFirstRule(Mockito.any(JRuleEvent.class));
     }
- ``
+``
  
  This will simulate the eventbus, and add all events in the eventlog.txt. The engine will trigger the rule and the mock will verify
  that it is called twice.
